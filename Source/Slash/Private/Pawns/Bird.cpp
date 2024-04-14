@@ -60,9 +60,8 @@ void ABird::MoveRight(const FInputActionInstance& Instance)
 
 void ABird::Look(const FInputActionInstance& Instance)
 {
-	UE_LOG(LogTemp, Warning, TEXT("ABird::Look()"));
 	AddControllerYawInput(Instance.GetValue().Get<FVector2D>().X);
-	AddControllerPitchInput(Instance.GetValue().Get<FVector2D>().Y);
+	AddControllerPitchInput(Instance.GetValue().Get<FVector2D>().Y * -1.f);
 }
 
 // Called every frame
